@@ -193,8 +193,16 @@ public class CameraViewController: UIViewController {
             cameraButton,
             closeButton,
             flashButton,
-            containerSwapLibraryButton].forEach({ self.view.addSubview($0) })
-        [swapButton, libraryButton].forEach({ containerSwapLibraryButton.addSubview($0) })
+            containerSwapLibraryButton].forEach({
+                // Added by mbecker: Change background to clear (transparent)
+                $0.backgroundColor = UIColor.clear
+                self.view.addSubview($0)
+            })
+        [swapButton, libraryButton].forEach({
+            // Added by mbecker: Change background to clear (transparent)
+            $0.backgroundColor = UIColor.clear
+            containerSwapLibraryButton.addSubview($0)
+        })
         view.setNeedsUpdateConstraints()
     }
     
